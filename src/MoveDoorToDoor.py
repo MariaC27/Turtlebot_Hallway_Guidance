@@ -48,48 +48,58 @@ class Patrol:
 
         return response.position
 
-    def patrol(self, poi1):  # type: (str, str) -> None
-        point1 = self.lookup(poi1)  # type: Point
 
-        goal = MoveBaseGoal()
-        target_pose = goal.target_pose  # type: PoseStamped
+    def getList(self):
+	request = PoiNamesRequest()
+	response = self.poi_names_callable(request)
 
-        header = target_pose.header  # type: Header
-        header.frame_id = "/map"
+	return response
 
-        pose = target_pose.pose  # type: Pose
+    def getItem(self, index):
+	retlist = self.getList()
+	retlist = self.getList()
+	return retlist[index]
+	
 
-        # pose.orientation  by default is just a bunch of 0's, which is not valid because the length of the
-        # vector is 0. Length of vector must be 1, and for map navigation, z-axis must be vertical, so by setting
-        # w = 1, it's the same as yaw = 0
-        pose.orientation.w = 1
+    def patrol(self):  # type: (str, str) -> None
 
-        while not rospy.is_shutdown():
-            ########### Drive to poi1
-            rospy.loginfo('drive to {}'.format(poi1))
+	
+        point1 = self.lookup(self.getItem(1))  # type: Point
 
-            pose.position = point1
-            header.stamp = rospy.Time.now()
+       	goal = MoveBaseGoal()
+	target_pose = goal.target_pose  # type: PoseStamped
 
-            self.move_base_action_client.send_goal(goal)
-            self.move_base_action_client.wait_for_result()
+	header = target_pose.header  # type: Header
+	header.frame_id = "/map"
 
-            rospy.loginfo('arrived, now waiting 10 sec')
-            for i in range(100):
-                if rospy.is_shutdown():
-                    return
-                rospy.sleep(0.1)
+	pose = target_pose.pose  # type: Pose
+
+	# pose.orientation  by default is just a bunch of 0's, which is not valid because the length of the
+	# vector is 0. Length of vector must be 1, and for map navigation, z-axis must be vertical, so by setting
+	# w = 1, it's the same as yaw = 0
+	pose.orientation.w = 1
+
+	while not rospy.is_shutdown():
+		########### Drive to poi1
+		rospy.loginfo('drive to {}'.format(response[x]))
+
+		pose.position = point1
+		header.stamp = rospy.Time.now()
+
+		self.move_base_action_client.send_goal(goal)
+		self.move_base_action_client.wait_for_result()
+
+		rospy.loginfo('arrived, now waiting 10 sec')
+		for i in range(100):
+			if rospy.is_shutdown():
+			       return
+			rospy.sleep(0.1)
+
+		
+
+
 
 
 if __name__ == "__main__":
     patrol = Patrol()
-
-   
-    relist = PoiNamesResponse()
-
-    for x in range(34)
-	patrol.Patrol(retlist[x])
-	rospy.sleep(100)
-
-
-
+    patrol.patrol()
