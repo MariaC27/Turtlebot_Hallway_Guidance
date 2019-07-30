@@ -8,6 +8,7 @@ from geometry_msgs.msg import Point
 from geometry_msgs.msg import PoseStamped
 from geometry_msgs.msg import Pose
 from std_msgs.msg import Header
+from std_msgs.msg import String
 
 from move_base_msgs.msg import MoveBaseAction
 # from move_base_msgs.msg import MoveBaseActionClient
@@ -39,6 +40,7 @@ class Patrol:
 
         self.move_base_action_client = actionlib.SimpleActionClient('move_base', MoveBaseAction)
         self.move_base_action_client.wait_for_server()
+	self.retlist = []
 
     def lookup(self, poi_name):  # type: (str) -> Point
         request = PoiNameLocatorRequest(poi_name)
@@ -50,21 +52,40 @@ class Patrol:
 
 
     def getList(self):
-	request = PoiNamesRequest()
-	response = self.poi_names_callable(request)
+	
+	list2 = []
+	
+	response = PoiNamesResponse()
+	response.locations = ['Door_213_Sinapov']
 
-	return response
 
+	
+	#for x in response.locations:
+		#nextString = String()
+		#nextString = x
+		#list2.append(nextString)
+
+	if not response.locations:
+		rospy.loginfo('list is empty')
+		
+
+	return response.locations 
+
+	
     def getItem(self, index):
-	retlist = self.getList()
-	retlist = self.getList()
-	return retlist[index]
+	self.retlist = self.getList()
+	rospy.sleep(0.1) 
+	temp = self.retlist[index]
+	#temp = 'Door_213_Sinapov'
+	rospy.loginfo('reached here')
+	return temp
 	
 
     def patrol(self):  # type: (str, str) -> None
 
+
 	
-        point1 = self.lookup(self.getItem(1))  # type: Point
+        point1 = self.lookup(self.getItem(0))  # type: Point
 
        	goal = MoveBaseGoal()
 	target_pose = goal.target_pose  # type: PoseStamped
@@ -81,7 +102,7 @@ class Patrol:
 
 	while not rospy.is_shutdown():
 		########### Drive to poi1
-		rospy.loginfo('drive to {}'.format(response[x]))
+		#rospy.loginfo('drive to {}'.format(response[x]))
 
 		pose.position = point1
 		header.stamp = rospy.Time.now()
