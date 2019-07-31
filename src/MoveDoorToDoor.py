@@ -85,7 +85,7 @@ class Patrol:
 
     def patrol(self): #moves from door to door in ascending order of door number  
 
-	for x in range(25,34): 
+	for x in range(34): 
 
 	
 		point1 = self.lookup(self.getItem(x))  # type: Point
