@@ -1,162 +1,136 @@
-
-
-245_Main_Office:
+Door_245_Main_Office:
   x: -3.3055
   y: 1.7089
 
-245_Sitting_Area:
+Door_245_Sitting_Area:
   x: -1.1599
   y: 2.5497
 
-202_Graduate_Offices:
+Door_202_Graduate_Offices:
   x: 2.0554
   y: 5.8229
 
-204_Kitchenette:
+Door_204_Kitchenette:
   x: 4.4648
   y: 6.7463
 
-205_Scheutz_Ruiter:
+Door_205_Scheutz_Ruiter:
   x: 6.8375
   y: 5.6177
 
-206_Akitaya:
+Door_206_Akitaya:
   x: 10.4683
   y: 6.8102
 
-207_Vu:
+Door_207_Vu:
   x: 11.5023
   y: 5.6684
 
-208_Koomson:
+Door_208_Koomson:
   x: 13.7424
   y: 5.6023
 
-209_Conference_Right:
+Door_209_Conference_Right:
   x: 13.4468
   y: 6.7859
 
-209_Conference_Left:
+Door_209_Conference_Left:
   x: 13.4467
-  Y: 14.0192
+  y: 14.0192
 
-210_Hughes:
+Door_210_Hughes:
   x: 17.5916
   y: 5.3893
 
-211_Foster:
+Door_211_Foster:
   x: 18.8548
   y: 5.2866
 
-212_Collab_Right:
+Door_212_Collab_Right:
   x: 21.0819
   y: 6.6649
 
-212_Collab_Left:
+Door_212_Collab_Left:
   x: 21.9039
   y: 13.8671
 
-213_Sinapov:
+Door_213_Sinapov:
   x: 23.0076
   y: 5.6336
 
-214_Mendelsohn:
+Door_214_Mendelsohn:
   x: 24.6323
   y: 5.4744
 
-215_Jacob:
+Door_215_Jacob:
   x: 26.4302
   y: 6.0530
 
-217_Janitor_Closet:
+Door_217_Janitor_Closet:
   x: 27.7618
   y: 12.3550
 
-Womens_Bathroom:
+Door_Womens_Bathroom:
   x: 26.0830
   y: 14.1902
 
-Mens_Bathroom:
+Door_Mens_Bathroom:
   x: 29.6786
   y: 14.096
 
-220_Afsar:
+Door_220_Afsar:
   x: 26.2534
   y: 14.5457
 
-221_Edwards:
+Door_221_Edwards:
   x: 24.9361
   y: 14.4779
 
-222_Ramsey:
+Door_222_Ramsey:
   x: 19.3969
   y: 14.4991
 
-224_Sheldon:
+Door_224_Sheldon:
   x: 17.6041
   y: 14.0903
 
-226_Graduate_Offices:
+Door_226_Graduate_Offices:
   x: 15.2736
   y: 14.0124
 
-228_SinapovLab_ProfKorman:
+Door_228_SinapovLab_ProfKorman:
   x: 12.3666
   y: 21.3270
 
-235B_Offices:
+Door_235B_Offices:
   x: 10.8759
   y: 13.4052
 
-233_Closet:
+Door_233_Closet:
   x: 2.8814
   y: 14.2013
 
-250_Graduate_Offices:
+Door_250_Graduate_Offices:
   x: 2.8814
   y: 13.1102
 
-235A_Hempstead:
+Door_235A_Hempstead:
   x: -3.7589
   y: 14.2762
 
-219_Wellness_Room:
+Door_219_Wellness_Room:
   x: -4.5289
   y: 13.3898
 
-237_Guyer:
+Door_237_Guyer:
   x: -4.9134
   y: 14.2814
 
-241_Landau:
+Door_241_Landau:
   x: -7.8610
   y: 13.8778
 
-239_Souvaine:
+Door_239_Souvaine:
   x: -7.4854
   y: 14.9263
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
