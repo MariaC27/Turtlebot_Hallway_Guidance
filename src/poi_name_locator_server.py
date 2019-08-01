@@ -1,8 +1,9 @@
+#!/usr/bin/env python
 from __future__ import print_function
+from collections import OrderedDict
 
 from geometry_msgs.msg import Point
 from std_msgs.msg import String 
-from collections import OrderedDict
 
 import rospy
 import rospkg
@@ -73,15 +74,18 @@ class PoiNameLocatorServer:
     def handle_poi_get_names(self, request):  # type: (PoiNameLocatorRequest) -> PoiNameLocatorResponse
         #poi_name = request.poi_name  # type: str
        
-        	retlist = []
-        	olist = OrderedDict(sorted(self.poi.items(), key=lambda t: t[0]))
+		retlist = []
+            	olist = OrderedDict(sorted(self.poi.items(), key=lambda t: t[0]))
 		for key in olist.keys(): 
 			nextString = String()
 			nextString.data = key
 			retlist.append(nextString)
-            
+			
 
-        return PoiNamesResponse(retlist)        
+			
+
+     
+		return PoiNamesResponse(retlist)        
         
         
 
